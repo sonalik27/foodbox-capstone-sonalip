@@ -8,6 +8,7 @@ class FoodBoxServerApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }

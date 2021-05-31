@@ -27,8 +27,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin (origins = "*" , exposedHeaders = "**")
-@RequestMapping("product")
+@CrossOrigin (origins = "http://localhost:4302/")
+@RequestMapping("/product")
 public class ProductController {
 
 	@Autowired
@@ -40,8 +40,8 @@ public class ProductController {
 	}
 
 	@PostMapping
-	public Product addOrUpdateProduct(@RequestBody Product customer) {
-		return service.save(customer);
+	public Product addOrUpdateProduct(@RequestBody Product product) {
+		return service.save(product);
 
 	}
 

@@ -40,6 +40,9 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 		// only the Token
 		if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
 			try {
+				jwtToken = requestTokenHeader.substring(7);
+//				jwtToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaXBhbGlrMjdAZ21haWwuY29tIiwiZXhwIjoxNjIyMjMwNDc5LCJpYXQiOjE2MjIyMTI0Nzl9.XKo4Qn4S0ZH1wLnpLH04FFQYQLsxGFMnCXrzPM7SWRTuw_u5tTJk3J8RlgVfogRp6YGAauOrPAjC2q_Ilk_GtA";
+
 				username = jwtTokenUtil.getUsernameFromToken(jwtToken);
 			} catch (IllegalArgumentException e) {
 				System.out.println("Unable to get JWT Token");
