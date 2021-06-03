@@ -11,8 +11,13 @@
               </p> -->
             </div>
           </section>
-          <button class="btn btn-success btn-lg float-right" (click)="checkout();">Checkout</button>
 
+          <div *ngIf="cuisineList.size>0;else other_content">
+          <button class="btn btn-success btn-lg float-right" (click)="checkout();">Checkout</button>
+          </div>
+          <ng-template #other_content>
+            <p class="card-text"> <b> Your Cart is Empty</b></p>
+        </ng-template>
           <div class="album py-5 bg-light">
             <div class="container">
 
